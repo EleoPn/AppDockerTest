@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Docker test</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<h1>Hello there,</h1>
+
+		<div class="row"></div>
+
+		<div class="col-md-4 mx-auto mt-5 text-center">
+			<p>
+			<form th:action="@{/saisir}" th:object="${person}" method="POST">
+				Quel est ton nom ? <input type="text" th:field="*{nom}" /> <br />
+				Et ton prénom ? <input type="text" th:field=*{prenom} /><br /> <br />
+				<input type="submit" value="Dire bonjour" />
+				<p th:text="${person.message}">
+			</form>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+</body>
+</html>
